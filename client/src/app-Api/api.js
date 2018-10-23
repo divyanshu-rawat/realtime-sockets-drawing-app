@@ -1,6 +1,6 @@
 
 import openSocket from 'socket.io-client';
-const socket = openSocket("http://0.0.0.0:8002");
+const socket = openSocket("http://0.0.0.0:8003");
 
 function subscribeToTimer(cb){
 	socket.on('timer', (timeStamp) => cb(timeStamp));

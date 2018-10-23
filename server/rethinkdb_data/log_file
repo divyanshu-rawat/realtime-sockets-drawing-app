@@ -15,3 +15,9 @@
 2018-10-23T19:48:48.658512000 0.458880s notice: Listening on http addresses: 127.0.0.1, ::1
 2018-10-23T19:48:48.658521000 0.458889s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2018-10-23T19:48:48.658530000 0.458898s notice: Server ready, "divyanshus_MacBook_Air_local_1uz" 648e72b5-8a0e-49af-bf91-e2796d239fd9
+2018-10-23T22:22:51.672279000 9243.056922s info: Table ed5598a3-415c-4ac9-a4be-658eff8e46aa: Starting a new Raft election for term 1.
+2018-10-23T22:22:51.672960000 9243.057603s info: Table ed5598a3-415c-4ac9-a4be-658eff8e46aa: Added replica on this server.
+2018-10-23T22:22:51.698103000 9243.082745s info: Table ed5598a3-415c-4ac9-a4be-658eff8e46aa: This server is Raft leader for term 1. Latest log index is 0.
+2018-10-23T22:52:45.191842000 11036.495816s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: Starting a new Raft election for term 1.
+2018-10-23T22:52:45.192067000 11036.496041s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: Added replica on this server.
+2018-10-23T22:52:45.219988000 11036.523961s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: This server is Raft leader for term 1. Latest log index is 0.
