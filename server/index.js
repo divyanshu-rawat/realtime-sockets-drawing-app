@@ -1,7 +1,7 @@
 const io = require("socket.io")();
 r = require('rethinkdb')
 
-function createDrawings(){
+function createDrawings({connection, name}){
 	r.table('drawings')
 	.insert({
 		name,
@@ -12,24 +12,30 @@ function createDrawings(){
 
 }
 
+function subscribeToDrawings({client, connection}){
+	r.table('drawings')
+	.changes({include_initial : true})
+	.run(connection)
+	.then((cursor) => {
+		cursor.each((err, drawingRow) =>{
+			client.emit('drawing', drawingRow.new_val)
+		})
+	})
+}
+
 
 r.connect({host : 'localhost', port: 28015, db: 'realtime'})
-.then((connection) => {
+ .then((connection) => {
 	io.on("connection", (client) => {
 		// send respond to event to that particular connected client.
 		// event Interested is subscribeToTimer that we will emit from react app later.
-		client.on("subscribeToTimer", (interval) => {
-			console.log('client is subscribing to timer with interval', interval);
-			
-			r.table('timers')
-			.changes()
-			.run(connection)
-			.then((cursor) => {
+		
+		client.on('createDrawing', ({name}) =>{
+			createDrawing({connection, name});
+		})
 
-				cursor.each((err,timerRow) => {
-					client.emit('timer', timerRow.new_val.timestamp);
-				})
-			})
+		client.on('subscribeToDrawings', () => {
+			subscribeToDrawings({client, connection})
 		})
 		// socket.io
 		// .on() is used to subscribe events.
