@@ -4,6 +4,7 @@ class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hasError: false,
       error: null,
       errorInfo: null
     };
@@ -12,13 +13,14 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     // Catch errors in any child components and re-renders with an error message
     this.setState({
+      hasError: true,
       error: error,
       errorInfo: errorInfo
     });
   }
 
   render() {
-    if (this.state.error) {
+    if (this.state.hasError) {
       // Fallback UI if an error occurs
       return (
         <div>

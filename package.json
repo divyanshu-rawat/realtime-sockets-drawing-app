@@ -9,6 +9,6 @@
     "start": "npm run start:server | npm run start:client"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "divyanshu-rawat",
+  "license": "MIT"
 }

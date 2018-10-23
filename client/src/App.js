@@ -1,23 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import ErrorBoundary from './Components/errBoundary'
 // import PropTypes from 'prop-types';
+import {subscribeToTimer} from './app-Api/api.js'
 
 class App extends Component {
 
-  componentDidCatch(error, errorInfo){
+  constructor(props){
+    super(props);
 
+    this.state = {
+      timeStamp: 'No, value has been emitted!'
+    }
+    subscribeToTimer((timeStamp) =>{
+      this.setState({ timeStamp })
+    })
   }
 
   render() {
     return (
       <Fragment>
-        <ErrorBoundary>
           <div className="App-header">
             <h2>RealTime Drawing !</h2>
           </div>
-           Welcome!
-        </ErrorBoundary>
+           Welcome! {this.state.timeStamp}
       </Fragment>
     );
   }

@@ -1,0 +1,17 @@
+2018-10-23T19:48:48.419046000 0.219423s notice: Recursively removing directory /Users/divyanshurawat/Desktop/getting-started-socketio-rethinkDB/server/rethinkdb_data/tmp
+2018-10-23T19:48:48.424280000 0.224662s notice: Initializing directory /Users/divyanshurawat/Desktop/getting-started-socketio-rethinkDB/server/rethinkdb_data
+2018-10-23T19:48:48.424773000 0.225149s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/divyanshurawat/Desktop/getting-started-socketio-rethinkDB/server/rethinkdb_data' did not already exist or is empty.)
+2018-10-23T19:48:48.425034000 0.225409s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-10-23T19:48:48.450674000 0.251049s notice: Running on Darwin 17.7.0 x86_64
+2018-10-23T19:48:48.450747000 0.251121s notice: Loading data from directory /Users/divyanshurawat/Desktop/getting-started-socketio-rethinkDB/server/rethinkdb_data
+2018-10-23T19:48:48.645501000 0.445870s info: Automatically using cache size of 100 MB
+2018-10-23T19:48:48.645559000 0.445928s warn: Cache size does not leave much memory for server and query overhead (available memory: 1070 MB).
+2018-10-23T19:48:48.645577000 0.445946s warn: Cache size is very low and may impact performance.
+2018-10-23T19:48:48.650416000 0.450785s notice: Listening for intracluster connections on port 29015
+2018-10-23T19:48:48.658288000 0.458656s notice: Listening for client driver connections on port 28015
+2018-10-23T19:48:48.658495000 0.458863s notice: Listening for administrative HTTP connections on port 8080
+2018-10-23T19:48:48.658499000 0.458867s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-10-23T19:48:48.658509000 0.458876s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-10-23T19:48:48.658512000 0.458880s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-10-23T19:48:48.658521000 0.458889s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-10-23T19:48:48.658530000 0.458898s notice: Server ready, "divyanshus_MacBook_Air_local_1uz" 648e72b5-8a0e-49af-bf91-e2796d239fd9
