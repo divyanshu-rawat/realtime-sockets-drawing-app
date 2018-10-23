@@ -7,9 +7,10 @@ io.on("connection", (client) => {
 
 	client.on("subscribeToTimer", (interval) => {
 		console.log('client is subscribing to timer with interval', interval);
+		setInterval(() => client.emit('timer', new Date()), interval)
 	})
 
-	setInterval(() => client.emit('timer', new Date() ), interval)
+	
 
 
 	// socket.io
@@ -18,6 +19,6 @@ io.on("connection", (client) => {
 	// .emit() is used to publish events. which in this case other end of the socket is client.
 })
 
-const port = 8000;
+const port = 8002;
 io.listen(port)
 console.log('listening on port', port);
