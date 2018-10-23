@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
 // import PropTypes from 'prop-types';
-import {subscribeToTimer} from './app-Api/api.js'
+// import {subscribeToTimer} from './app-Api/api.js'
+import DrawingForm from './Components/drawingForm';
 
 class App extends Component {
 
@@ -11,9 +12,6 @@ class App extends Component {
     this.state = {
       timeStamp: 'No, value has been emitted!'
     }
-    subscribeToTimer((timeStamp) =>{
-      this.setState({ timeStamp })
-    })
   }
 
   render() {
@@ -23,6 +21,7 @@ class App extends Component {
             <h2>RealTime Drawing !</h2>
           </div>
            Welcome! {this.state.timeStamp}
+           <DrawingForm />
       </Fragment>
     );
   }
