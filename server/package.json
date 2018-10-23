@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "p1": "nodemon index 8001",
+    "p2": "nodemon index 8002"
+  },
+  "dependencies": {
+    "nodemon": "^1.18.4",
+    "rethinkdb": "^2.3.3",
+    "socket.io": "^2.1.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

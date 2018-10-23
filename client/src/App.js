@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
+import ErrorBoundary from './Components/errBoundary'
+// import PropTypes from 'prop-types';
 
 class App extends Component {
 
+  componentDidCatch(error, errorInfo){
+
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Drawing App</h2>
-        </div>
-        Welcome!
-      </div>
+      <Fragment>
+        <ErrorBoundary>
+          <div className="App-header">
+            <h2>RealTime Drawing !</h2>
+          </div>
+           Welcome!
+        </ErrorBoundary>
+      </Fragment>
     );
   }
 }
