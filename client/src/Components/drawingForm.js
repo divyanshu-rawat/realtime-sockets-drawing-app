@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-// import {
-//   createDrawing,
-// } from './api';
+import {
+  createDrawings,
+} from '../app-Api/api';
+
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+
 
 
 const styles = theme => ({
@@ -20,6 +23,15 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+
 });
 
 
@@ -37,7 +49,7 @@ class DrawingForm extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    // createDrawing(this.state.drawingName);
+    createDrawings(this.state.drawingName);
     this.setState({
       drawingName: '',
     });
@@ -49,17 +61,22 @@ class DrawingForm extends Component {
 
     return (
       <div className="Form">
-        <form onSubmit={this.handleSubmit}>
-          <input
+        <form  noValidate autoComplete="off">
+
+           <TextField
+            id="outlined-name"
             type="text"
+            label="Name"
+            className={classes.textField}
             value={this.state.drawingName}
             onChange={(evt) => this.setState({ drawingName: evt.target.value })}
             placeholder="Drawing name"
-            className="Form-drawingInput"
+            margin="normal"
+            variant="outlined"
             required
           />
 
-          <Button variant="contained" color="primary" className={classes.button} type="submit">
+          <Button variant="contained" color="primary" className={classes.button} type="submit" onClick = {this.handleSubmit}>
             Send
             <Icon className={classes.rightIcon}>send</Icon>
           </Button>
