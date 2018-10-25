@@ -23,6 +23,14 @@ function subscribeToDrawings({ client, connection }){
 	})
 }
 
+function handleLinePublish({connection, line}){
+	
+	r.table('lines')
+	.insert(Object.assign(line, {timestamp: new Date()}))
+	.run(connection);
+
+}
+
 
 r.connect({host : 'localhost', port: 28015, db: 'realtime'})
  .then((connection) => {
@@ -36,6 +44,10 @@ r.connect({host : 'localhost', port: 28015, db: 'realtime'})
 
 		client.on('subscribeToDrawings', () => {
 			subscribeToDrawings({ client, connection })
+		})
+
+		client.on('publishLine', ( line ) => {
+			handleLinePublish({ connection, line })
 		})
 		// socket.io
 		// .on() is used to subscribe events.

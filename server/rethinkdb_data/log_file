@@ -21,3 +21,6 @@
 2018-10-23T22:52:45.191842000 11036.495816s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: Starting a new Raft election for term 1.
 2018-10-23T22:52:45.192067000 11036.496041s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: Added replica on this server.
 2018-10-23T22:52:45.219988000 11036.523961s info: Table 436e6580-3b89-4c72-a60a-0912a9952e40: This server is Raft leader for term 1. Latest log index is 0.
+2018-10-26T01:36:38.991287000 123074.305620s info: Table 74c3d77d-ab72-49c3-aab7-4f3dd90f02bb: Starting a new Raft election for term 1.
+2018-10-26T01:36:38.992821000 123074.307150s info: Table 74c3d77d-ab72-49c3-aab7-4f3dd90f02bb: Added replica on this server.
+2018-10-26T01:36:39.035594000 123074.349922s info: Table 74c3d77d-ab72-49c3-aab7-4f3dd90f02bb: This server is Raft leader for term 1. Latest log index is 0.
