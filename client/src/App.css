@@ -9,8 +9,16 @@ html,body, #root { height: 100%; margin: 0px; padding: 0px; }
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white;
   padding: 10px;
 }
 
+.canvas{
+	border: 1px solid black;
+	height: 300px;
+	margin: 5%;
+}
+
+.drawingName{
+	margin: 2%;
+}

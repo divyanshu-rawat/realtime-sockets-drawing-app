@@ -7,8 +7,10 @@ class Drawing extends React.Component{
 	render(){
 		return(this.props.drawing) ? 
 			<div>
-				<div>	{this.props.drawing.name} </div>
-				<Canvas drawingEnabled = {true} />
+				<div className = "drawingName"><strong> Drawing Name:</strong> {this.props.drawing.name} </div>
+				<div className = "canvas">
+					<Canvas drawingEnabled = {true} />
+				</div>
 			</div>
 		: null
 	}

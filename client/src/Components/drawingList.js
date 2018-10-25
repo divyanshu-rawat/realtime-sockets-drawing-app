@@ -43,7 +43,7 @@ class DrawingList extends Component {
     const { classes  } = this.props;
     const drawings = this.state.drawings.map((drawing) => (
 
-        <ListItemLink href="/simple-list">
+        <ListItemLink key = {drawing.id} onClick = { () => this.props.onClick(drawing)} >
           <ListItemText primary = {drawing.name} />
         </ListItemLink>
     ))
