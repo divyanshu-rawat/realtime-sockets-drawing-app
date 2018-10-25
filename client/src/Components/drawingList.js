@@ -4,6 +4,25 @@ import {
   subscribeToDrawings,
 } from '../app-Api/api';
 
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+});
+
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 
 class DrawingList extends Component {
 
@@ -20,18 +39,26 @@ class DrawingList extends Component {
     })
   }
 
-  componentDidMount(){}
-
   render() {
     const { classes  } = this.props;
     const drawings = this.state.drawings.map((drawing) => (
-    	 <li key = {drawing.id}> {drawing.name} </li>
+
+        <ListItemLink href="/simple-list">
+          <ListItemText primary = {drawing.name} />
+        </ListItemLink>
     ))
-    console.log('drawings',this.state.drawings);
     return (
-        <ul>{drawings}</ul>
+        <div className={classes.root}>
+      		<List component="nav">
+      			{drawings}
+      		</List>
+    	</div>
     );
   }
 }
 
-export default DrawingList;
+DrawingList.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(DrawingList);
