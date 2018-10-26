@@ -16,9 +16,8 @@ class Drawing extends React.Component{
 	}
 
 	componentDidMount(){
-		subscribeToDrawingsLines(this.props.drawing.id, (line) => {
-			console.log('line', line)
-			this.setState((prevState) => { return { lines: [ ...prevState.lines, line] }} )
+		subscribeToDrawingsLines(this.props.drawing.id, (lineEventStream) => {
+			this.setState((prevState) => { return { lines: [ ...prevState.lines, ...lineEventStream.lines ] }} )
 		})
 	}
 
