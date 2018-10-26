@@ -1,8 +1,6 @@
 # realtime-sockets-rxjs
 A realtime application created using WebSockets, RethinkDB, RxJs, Node.js, React.js, Material-UI
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 
@@ -17,6 +15,8 @@ A user can add a new drawing and it'll immediately display in the list of drawin
 * Improving the Rendering Time of the Drawing Component (RxJS Streams).
 
 #
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
 
 ### Challenges:
 
@@ -35,6 +35,9 @@ A user can add a new drawing and it'll immediately display in the list of drawin
 * ``` Node.js ``` Event driven programming language.
 
 #
+
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ### Installation:
 
