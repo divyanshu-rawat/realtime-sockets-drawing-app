@@ -23,6 +23,20 @@ function subscribeToDrawings({ client, connection }){
 	})
 }
 
+function subscribeToDrawingsLines({ client, connection, drawingID }){
+	r.table('lines')
+	.filter(r.row('drawingID').eq(drawingID))
+	.changes({include_initial : true})
+	.run(connection)
+	.then((cursor) => {
+		cursor.each((err, lineRow) =>{
+			client.emit(`drawingLine: ${drawingID}`, lineRow.new_val)
+		})
+	})
+}
+
+
+
 function handleLinePublish({connection, line}){
 	
 	r.table('lines')
@@ -48,6 +62,10 @@ r.connect({host : 'localhost', port: 28015, db: 'realtime'})
 
 		client.on('publishLine', ( line ) => {
 			handleLinePublish({ connection, line })
+		})
+
+		client.on('subscribeToDrawingsLines', ( drawingID ) => {
+			subscribeToDrawingsLines({ client, connection , drawingID})
 		})
 		// socket.io
 		// .on() is used to subscribe events.
