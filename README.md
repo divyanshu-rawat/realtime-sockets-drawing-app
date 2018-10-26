@@ -42,12 +42,12 @@ A user can add a new drawing and it'll immediately display in the list of drawin
 
 * ``` rethinkdb ``` server runs on ``` localhost:8080 ``` , go to ``` localhost:8080 ``` create a db ``` realtime ```, and then create two tables namely ``` drawings ``` and ``` lines ```.
 
-#
-
 
 * Now you are good to go!
 * Open an issue if you are not been able to folow up.
 
+
+#
 
 
 
