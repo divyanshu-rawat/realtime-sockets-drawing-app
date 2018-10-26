@@ -73,7 +73,7 @@ r.connect({host : 'localhost', port: 28015, db: 'realtime'})
 	})
 })
 
-const port = 8003;
+const port = parseInt(process.argv[2], 10) || 8000;
 io.listen(port)
 console.log('listening on port', port);
 

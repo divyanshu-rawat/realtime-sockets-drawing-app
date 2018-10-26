@@ -6,7 +6,7 @@ import Rx from 'rxjs/Rx';
 // so basically sending each line to the canvas as props, we are gonno send it through in buffers, giving it time to go apply a buffer of lines together.
 // as events from the server as coming as streams, it makes sense to use rx.js
 
-const port = parseInt(window.location.search.replace('?',''), 10) || 8004
+const port = parseInt(window.location.search.replace('?',''), 10) || 8000
 const socket = openSocket(`http://0.0.0.0:${port}`);
 
 function subscribeToDrawings(cb){
