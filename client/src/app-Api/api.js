@@ -6,8 +6,8 @@ import Rx from 'rxjs/Rx';
 // so basically sending each line to the canvas as props, we are gonno send it through in buffers, giving it time to go apply a buffer of lines together.
 // as events from the server as coming as streams, it makes sense to use rx.js
 
-
-const socket = openSocket("http://0.0.0.0:8003");
+const port = parseInt(window.location.search.replace('?',''), 10) || 8004
+const socket = openSocket(`http://0.0.0.0:${port}`);
 
 function subscribeToDrawings(cb){
 	socket.on('drawing',drawing => cb(drawing));
@@ -20,6 +20,20 @@ function createDrawings(name){
 
 function publishLine(drawingID, line){
 	socket.emit('publishLine',{drawingID, ...line})
+}
+
+function subscribeToConnectionEvent(cb){
+	socket.on('connect', () => cb({
+		state: 'connected', port,
+	}))
+
+	socket.on('disconnect', () => cb({
+		state: 'disconnected', port,
+	}))
+
+	socket.on('connect_error', () => cb({
+		state: 'disconnected', port,
+	}))
 }
 
 function subscribeToDrawingsLines(drawingID, cb){
@@ -43,4 +57,4 @@ function subscribeToDrawingsLines(drawingID, cb){
 	socket.emit('subscribeToDrawingsLines', drawingID);
 }
 
-export { createDrawings, subscribeToDrawings, publishLine, subscribeToDrawingsLines };
+export { createDrawings, subscribeToDrawings, publishLine, subscribeToDrawingsLines, subscribeToConnectionEvent };

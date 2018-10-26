@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import DrawingForm from './Components/drawingForm'
 import DrawingList from './Components/drawingList'
 import Drawing from './Components/drawing'
+import Connection from './Components/connection'
 
 class App extends Component {
 
@@ -44,6 +45,7 @@ class App extends Component {
           <div className="App-header">
             <i className="fa fa-home fa-2x" aria-hidden="true" onClick = {this.changeStatus}></i>
           </div>
+          <Connection />
           {content}
       </Fragment>
     );
