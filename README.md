@@ -1,4 +1,9 @@
 # realtime-sockets-rxjs
+
+
+![Alt Text](https://github.com/divyanshu-rawat/realtime-sockets-rxjs/blob/master/collection/screencast.gif)
+
+
 A realtime application created using WebSockets, RethinkDB, RxJs, Node.js, React.js, Material-UI
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
@@ -55,9 +60,4 @@ A user can add a new drawing and it'll immediately display in the list of drawin
 
 
 #
-
-
-
-
-![Alt Text](https://github.com/divyanshu-rawat/realtime-sockets-rxjs/blob/master/collection/screencast.gif)
 
